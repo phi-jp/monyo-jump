@@ -10,7 +10,7 @@ tm.game.setup({
         ground: "images/ground.png",
         background: "images/background.png",
     },
-    startLabel: "game",
+    // startLabel: "game",
 });
 
 var FLOOR_HEIGHT = SCREEN_GRID_Y.span(3);

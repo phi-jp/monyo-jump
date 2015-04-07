@@ -60,7 +60,7 @@ tm.define("Floor", {
     init: function() {
         this.superInit();
 
-        this.width = SCREEN_WIDTH;
+        this.width = SCREEN_WIDTH+64;
         this.height = FLOOR_HEIGHT;
         this.originX = 0;
         this.originY = 1;
@@ -68,8 +68,17 @@ tm.define("Floor", {
         var c = this.canvas;
         var ground = tm.asset.Manager.get("ground");
 
-        (18).times(function(i) {
+        (20).times(function(i) {
             c.drawTexture(ground, i*37, 0, 37, FLOOR_HEIGHT);
         });
+
+        this.x = 0;
+    },
+    update: function() {
+        this.x-=4;
+
+        if (this.x < -37) {
+            this.x = 0;
+        }
     }
 });
